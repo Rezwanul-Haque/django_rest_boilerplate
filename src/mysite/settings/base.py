@@ -19,6 +19,7 @@ CUSTOM_MANAGEMENT_APPS = [
 
 LOCAL_APPS = [
     # 'example.apps.ExamplesConfig',
+    'api.apps.ApiConfig',
 ]
 
 INSTALLED_APPS = [

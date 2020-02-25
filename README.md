@@ -47,20 +47,44 @@ so current folder structure would be like this...
 django-project-boilerplate(project folder)
 
 ```
-.
-+-- .git
-+-- src
-|   +-- core
-|   +-- mysite
-|   +-- templates
-|   +-- .env
-|   +-- manage.py
-|   +-- requirements.dev.txt
-|   +-- requirements.prod.txt
-+-- venv
-|   +-- Scripts
-+-- README.md
-+-- LICENSE
+src
+├── api
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── core
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   │       └── rename.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+├── mysite
+│   ├── __init__.py
+│   ├── settings
+│   │   ├── base.py
+│   │   ├── development.py
+│   │   ├── __init__.py
+│   │   └── production.py
+│   ├── urls.py
+│   └── wsgi.py
+├── requirements.dev.txt
+├── requirements.prod.txt
+└── templates
+    ├── admin
+    │   └── base_site.html
+    └── base.html
 ```
 
 For security purpose this boilerplate uses python-decouple to secure all sensitive variables like SECRECT_KEY, Production level database username, password etc to a secure file called .env
