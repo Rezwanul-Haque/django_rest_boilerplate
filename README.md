@@ -46,6 +46,7 @@ so current folder structure would be like this...
 
 django-project-boilerplate(project folder)
 
+```
 .
 +-- .git
 +-- src
@@ -60,6 +61,7 @@ django-project-boilerplate(project folder)
 |   +-- Scripts
 +-- README.md
 +-- LICENSE
+```
 
 For security purpose this boilerplate uses python-decouple to secure all sensitive variables like SECRECT_KEY, Production level database username, password etc to a secure file called .env
 
