@@ -7,10 +7,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# API Version
+API_VERSION = 'v1'
 
 # Application definition
 THIRD_PARTY_APPS = [
     'django_extensions',
+    'rest_framework',
+    'corsheaders',
 ]
 
 CUSTOM_MANAGEMENT_APPS = [
@@ -37,6 +41,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     # 'whitenoise.middleware.WhiteNoiseMiddleware',  ## uncomment it for production use to use whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', ## corsheaders middleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -45,6 +50,18 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+
+# • AllowAny - any user, authenticated or not, has full access
+# • IsAuthenticated - only authenticated, registered users have access
+# • IsAdminUser - only admins/superusers have access
+# • IsAuthenticatedOrReadOnly - unauthorized users can view any page, but only
+#   authenticated users have write, edit, or delete privileges
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 
 TEMPLATES = [
     {
