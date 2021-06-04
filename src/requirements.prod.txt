@@ -2,7 +2,7 @@
 pillow==7.0.0
 
 # Django
-Django==2.2.9
+Django==2.2.21
 
 # Secure Sensitive Constant
 python-decouple==3.3
